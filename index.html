@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirigir a Telegram</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+  }
+
+  .banner {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .logo-circle {
+    width: 80px;
+    height: 80px;
+    background: #0088cc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px;
+  }
+
+  .logo-circle img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .btn-telegram {
+    display: inline-block;
+    background: #0088cc;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    animation: pulse 1.5s infinite;
+    margin-top: 20px;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 136, 204, 0.7);}
+    50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(0, 136, 204, 0.4);}
+    100% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 136, 204, 0.7);}
+  }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <div class="logo-circle">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Logo">
+  </div>
+  <p style="font-size: 18px; margin-bottom: 10px;">Trabajo en casa</p>
+  <a class="btn-telegram" href="https://t.me/+yReOJ3VlKCxlMjli
+">Abrir Telegram</a>
+</div>
+
+<script>
+  // Определение user agent для iOS
+  var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+  if (!isIOS) {
+    // Android редирект оставляем как есть
+    setTimeout(function () {
+      window.location.href =
+        "intent://t.me/+yReOJ3VlKCxlMjli
+#Intent;scheme=https;package=org.telegram.messenger;end";
+    }, 500);
+
+    setTimeout(function () {
+      window.location.href = "https://t.me/+yReOJ3VlKCxlMjli
+";
+    }, 1800);
+  }
+  // На iOS пускаем пользователя вручную через кнопку, без авто-редиректа
+</script>
+
+</body>
+</html>
