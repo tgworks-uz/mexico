@@ -67,8 +67,7 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Logo">
   </div>
   <p style="font-size: 18px; margin-bottom: 10px;">Trabajo en casa</p>
-  <a class="btn-telegram" href="https://t.me/+yReOJ3VlKCxlMjli
-">Abrir Telegram</a>
+  <a class="btn-telegram" href="https://t.me/+yReOJ3VlKCxlMjli" target="_blank">Abrir Telegram</a>
 </div>
 
 <script>
@@ -78,17 +77,14 @@
   if (!isIOS) {
     // Android редирект оставляем как есть
     setTimeout(function () {
-      window.location.href =
-        "intent://t.me/+yReOJ3VlKCxlMjli
-#Intent;scheme=https;package=org.telegram.messenger;end";
+      window.location.href = "intent://t.me/+yReOJ3VlKCxlMjli#Intent;scheme=https;package=org.telegram.messenger;end";
     }, 500);
 
     setTimeout(function () {
-      window.location.href = "https://t.me/+yReOJ3VlKCxlMjli
-";
+      window.location.href = "https://t.me/+yReOJ3VlKCxlMjli";
     }, 1800);
   }
-  // На iOS пускаем пользователя вручную через кнопку, без авто-редиректа
+  // На iOS пользователь кликает вручную на кнопку, без авто-редиректа
 </script>
 
 </body>
