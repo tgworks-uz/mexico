@@ -106,28 +106,9 @@ body {
   </a>
 </div>
 
+<!-- Нет авто-редиректа -->
 <script>
-var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-if (!isIOS) {
-  // Android: пробуем intent
-  setTimeout(function () {
-    fbq('track', 'Lead', {source: 'auto_intent'});
-    setTimeout(function () {
-      window.location.href = "intent://t.me/+yReOJ3VlKCxlMjli#Intent;scheme=https;package=org.telegram.messenger;end";
-    }, 200);
-  }, 500);
-
-  // Фолбэк: если Telegram не установлен, возвращаем на эту же страницу
-  setTimeout(function () {
-    fbq('track', 'Lead', {source: 'auto_fallback'});
-    setTimeout(function () {
-      window.location.href = window.location.href; // просто перезагружаем страницу с кнопкой
-    }, 1800);
-  }, 1800);
-}
-
-// iOS: пользователь нажимает кнопку сам
+// iOS/Android: пользователь нажимает кнопку сам
 </script>
 </body>
 </html>
