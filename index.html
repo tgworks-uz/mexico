@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="facebook-domain-verification" content="nijjlfatlwfo74umni0epuudaf6j2q" />
 <title>Redirigir a Telegram</title>
 
 <!-- Meta Pixel Code -->
@@ -54,70 +55,3 @@ body {
   height: 50px;
 }
 .btn-telegram {
-  display: inline-block;
-  background: #0088cc;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 15px 40px;
-  border-radius: 30px;
-  text-decoration: none;
-  animation: pulse 1.5s infinite;
-  margin-top: 20px;
-}
-@keyframes pulse {
-  0% { transform: scale(1); box-shadow: 0 0 0 rgba(0,136,204,.7);}
-  50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(0,136,204,.4);}
-  100% { transform: scale(1); box-shadow: 0 0 0 rgba(0,136,204,.7);}
-}
-</style>
-</head>
-
-<body>
-
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=909063091813143&ev=PageView&noscript=1"/>
-</noscript>
-
-<div class="banner">
-  <div class="logo-circle">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Logo">
-  </div>
-  <p style="font-size: 18px; margin-bottom: 10px;">Trabajo en casa</p>
-
-  <a class="btn-telegram"
-     href="https://t.me/+yReOJ3VlKCxlMjli"
-     target="_blank"
-     onclick="fbq('track','Lead',{source:'telegram_button'});">
-     Abrir Telegram
-  </a>
-</div>
-
-<script>
-  var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-  if (!isIOS) {
-
-    // intent redirect — с мягким трекингом
-    setTimeout(function () {
-      fbq('track', 'Lead', {source: 'auto_intent'});
-      setTimeout(function () {
-        window.location.href =
-          "intent://t.me/+yReOJ3VlKCxlMjli#Intent;scheme=https;package=org.telegram.messenger;end";
-      }, 200);
-    }, 500);
-
-    // fallback web redirect — тоже мягко
-    setTimeout(function () {
-      fbq('track', 'Lead', {source: 'auto_web'});
-      setTimeout(function () {
-        window.location.href = "https://t.me/+yReOJ3VlKCxlMjli";
-      }, 200);
-    }, 1800);
-
-  }
-</script>
-
-</body>
-</html>
