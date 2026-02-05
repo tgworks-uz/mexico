@@ -16,74 +16,68 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
-fbq('init', '1233279682109106');
+fbq('init', '909063091813143');
 fbq('track', 'PageView');
 </script>
 <!-- End Meta Pixel Code -->
 
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #f0f0f0;
-  }
-
-  .banner {
-    background: white;
-    padding: 40px 20px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-
-  .logo-circle {
-    width: 80px;
-    height: 80px;
-    background: #0088cc;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 20px;
-  }
-
-  .logo-circle img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .btn-telegram {
-    display: inline-block;
-    background: #0088cc;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 15px 40px;
-    border-radius: 30px;
-    text-decoration: none;
-    animation: pulse 1.5s infinite;
-    margin-top: 20px;
-  }
-
-  @keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 136, 204, 0.7);}
-    50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(0, 136, 204, 0.4);}
-    100% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 136, 204, 0.7);}
-  }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f0f0;
+}
+.banner {
+  background: white;
+  padding: 40px 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.logo-circle {
+  width: 80px;
+  height: 80px;
+  background: #0088cc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+}
+.logo-circle img {
+  width: 50px;
+  height: 50px;
+}
+.btn-telegram {
+  display: inline-block;
+  background: #0088cc;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  animation: pulse 1.5s infinite;
+  margin-top: 20px;
+}
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 rgba(0,136,204,.7);}
+  50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(0,136,204,.4);}
+  100% { transform: scale(1); box-shadow: 0 0 0 rgba(0,136,204,.7);}
+}
 </style>
 </head>
 
 <body>
 
-<!-- Meta Pixel Noscript -->
 <noscript>
 <img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1233279682109106&ev=PageView&noscript=1"/>
+src="https://www.facebook.com/tr?id=909063091813143&ev=PageView&noscript=1"/>
 </noscript>
 
 <div class="banner">
@@ -95,28 +89,31 @@ src="https://www.facebook.com/tr?id=1233279682109106&ev=PageView&noscript=1"/>
   <a class="btn-telegram"
      href="https://t.me/+yReOJ3VlKCxlMjli"
      target="_blank"
-     onclick="fbq('track', 'Lead', {source: 'telegram_button'});">
+     onclick="fbq('track','Lead',{source:'telegram_button'});">
      Abrir Telegram
   </a>
 </div>
 
 <script>
-  // Определение iOS
   var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
   if (!isIOS) {
 
-    // Android intent
+    // intent redirect — с мягким трекингом
     setTimeout(function () {
-      fbq('track', 'Lead', {source: 'auto_redirect_intent'});
-      window.location.href =
-        "intent://t.me/+yReOJ3VlKCxlMjli#Intent;scheme=https;package=org.telegram.messenger;end";
+      fbq('track', 'Lead', {source: 'auto_intent'});
+      setTimeout(function () {
+        window.location.href =
+          "intent://t.me/+yReOJ3VlKCxlMjli#Intent;scheme=https;package=org.telegram.messenger;end";
+      }, 200);
     }, 500);
 
-    // Fallback на web
+    // fallback web redirect — тоже мягко
     setTimeout(function () {
-      fbq('track', 'Lead', {source: 'auto_redirect_web'});
-      window.location.href = "https://t.me/+yReOJ3VlKCxlMjli";
+      fbq('track', 'Lead', {source: 'auto_web'});
+      setTimeout(function () {
+        window.location.href = "https://t.me/+yReOJ3VlKCxlMjli";
+      }, 200);
     }, 1800);
 
   }
