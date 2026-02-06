@@ -18,8 +18,12 @@ n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);
 t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
+
 fbq('init', '909063091813143');
 fbq('track', 'PageView');
+
+// Добавляем ViewContent сразу при заходе на страницу
+fbq('track', 'ViewContent');
 </script>
 <!-- End Meta Pixel Code -->
 
@@ -99,14 +103,13 @@ body {
   <p style="font-size: 18px; margin-bottom: 20px;">Abrir en Telegram</p>
 
   <a class="btn-telegram"
-     href="https://t.me/+yReOJ3VlKCxlMjli"
+     href="https://t.me/WorkQuarrys"
      target="_blank"
      onclick="fbq('track','Lead',{source:'telegram_button'});">
      Abrir Telegram
   </a>
 </div>
 
-<!-- Нет авто-редиректа -->
 <script>
 // iOS/Android: пользователь нажимает кнопку сам
 </script>
